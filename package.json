@@ -1,5 +1,5 @@
 {
-  "name": "simple-mvc-example",
+  "name": "mvc-exercise",
   "version": "0.0.0",
   "engines": {
     "node": "12.18.3",
@@ -13,7 +13,7 @@
     "pretest": "eslint ./server --fix",
     "test": "echo \"tests complete\""
   },
-  "author": "Cody Van De Mark / Austin Willoughby",
+  "author": "Cody Van De Mark / Austin Willoughby / Matheus Laurentys",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.11.0",
@@ -24,6 +24,7 @@
   "dependencies": {
     "body-parser": "^1.19.2",
     "compression": "^1.7.4",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.3",
     "mongoose": "^6.2.6",

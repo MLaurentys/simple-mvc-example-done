@@ -14,6 +14,8 @@ const mongoose = require('mongoose');
 // express handlebars is an express plugin for handlebars templating
 const expressHandlebars = require('express-handlebars');
 
+require('dotenv').config();
+
 // import our router.js file to handle the MVC routes
 // In MVC, you have 'routes' that line up URLs to controller methods
 const router = require('./router.js');
@@ -24,7 +26,6 @@ const router = require('./router.js');
 // otherwise fallback to localhost.
 // The string after mongodb://localhost is the database name. It can be anything you want.
 const dbURL = process.env.MONGODB_URI || 'mongodb://localhost/simpleMVCExample';
-
 // call mongoose's connect function and pass in the url.
 // If there are any errors connecting, we will throw it and kill the server.
 // Once connected, the mongoose package will stay connected for every file
@@ -65,9 +66,12 @@ app.use(bodyParser.json());
 // set up the view (V of MVC) to use handlebars
 // You can use other view engines besides handlebars
 // We will also set the default layout to nothing
-app.engine('handlebars', expressHandlebars.engine({
-  defaultLayout: '',
-}));
+app.engine(
+  'handlebars',
+  expressHandlebars.engine({
+    defaultLayout: '',
+  }),
+);
 app.set('view engine', 'handlebars');
 
 // set the views path to the template directory
